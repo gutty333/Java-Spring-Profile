@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: profile.application
+  datasource:
+    url: testDev
+    driverClassName: driver test
+    username: userDev
+    password: test123Dev
+  pet-service:
+    enabled: true
+    endpoint: http://localhost:8090
+
+corporate:
+  name: Luck Dev

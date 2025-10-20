@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: profile.application
+    title: test
+  datasource:
+    url: test
+    driverClassName: driver test
+    username: user
+    password: test123
+  pet-service:
+    enabled: false
+    endpoint: http://localhost:8090
+  client:
+    connection-timeout: 5000
+    read-timeout: 10000
+
+corporate:
+  name: Luck

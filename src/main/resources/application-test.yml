@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: profile.application
+  pet-service:
+    enabled: true
+    endpoint: http://localhost:8091
+
+corporate:
+  name: Luck Test
