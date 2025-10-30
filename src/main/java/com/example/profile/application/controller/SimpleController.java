@@ -5,7 +5,9 @@ import com.example.profile.application.model.PetRequest;
 import com.example.profile.application.model.PetResponse;
 import com.example.profile.application.model.Student;
 import com.example.profile.application.service.PetService;
+import com.example.profile.application.service.SimpleBeanService;
 import com.example.profile.application.service.StudentService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -27,6 +29,8 @@ public class SimpleController {
 
     PetService petService;
 
+    SimpleBeanService simpleBeanService;
+
     @GetMapping
     public ResponseEntity<Student> getIntro() {
         return ResponseEntity.ok(studentService.createStudent(environment, propertiesConfig.getName()));
@@ -35,5 +39,10 @@ public class SimpleController {
     @PostMapping("/explore-pets")
     public ResponseEntity<PetResponse> explorePets(@RequestBody PetRequest request) {
         return ResponseEntity.ok(petService.getPet(request));
+    }
+    
+    @GetMapping("/bean")
+    public ResponseEntity<String> simpleService() throws JsonProcessingException {
+        return ResponseEntity.ok(simpleBeanService.simpleResponse());
     }
 }

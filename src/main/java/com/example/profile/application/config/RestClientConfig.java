@@ -1,5 +1,6 @@
 package com.example.profile.application.config;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,12 @@ public class RestClientConfig {
         return builder
                 .requestFactory(factory)
                 .build();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(name = "currentBean")
+    String currentBean() {
+        return "The backup current bean";
     }
 }
 
