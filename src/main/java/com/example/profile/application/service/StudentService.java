@@ -23,6 +23,8 @@ public class StudentService {
         Faker faker = new Faker();
         Random random = new Random();
 
+        String title = environment.getProperty("spring.application.title", "Default Title");
+
         return Student.builder()
                 .name(faker.name().fullName())
                 .city(faker.country().name())
